@@ -1,0 +1,10 @@
+{
+  "mainMenu": {
+    "1":"one value",
+    "2":"two value"
+  },
+  "emergency": {
+    "response":"Please confirm that you are in a state of emergency",
+    "one":"Confirm and accept call from operator"
+  }
+}
