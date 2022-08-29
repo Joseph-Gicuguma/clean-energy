@@ -6,9 +6,10 @@ const credentials = {
 const Africastalking = require('africastalking')(credentials);
 
 const sms = Africastalking.SMS;
+const voice = Africastalking.VOICE;
 
 const UssdMenu = require('ussd-builder');
 
 const menu = new UssdMenu();
 
-module.exports = { sms, menu };
+module.exports = { sms, menu, voice };
