@@ -1,7 +1,5 @@
-const AppRoutes = require('./ussd/app.route');
-// const ChatbotRoutes = require('./sms/chatbot.route');
+// const AppRoutes = require('./ussd/app.route');
 
-module.exports = {
-  AppRoutes,
-  // ChatbotRoutes,
-};
+// module.exports = {
+//   AppRoutes,
+// };

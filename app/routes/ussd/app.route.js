@@ -1,7 +1,7 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 
-const { AppController } = require('../../controllers');
+// const { AppController } = require('../../controllers');
 
-router.post('', AppController.index);
+// router.post('', AppController.index);
 
-module.exports = router;
+// module.exports = router;

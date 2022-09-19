@@ -6,15 +6,17 @@ require('dotenv/config');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const session = require('express-session');
 
 // database configurations
 require('./config/database')(mongoose);
 
 // send sms server
-const chatbotSMS = require('./controllers/sms/chatbot.controller');
+// const chatbotSMS = require('./controllers/sms/chatbot.controller');
+const AppController = require('./controllers/ussd/app.controller');
 
 // importing routes form .routes
-const { AppRoutes } = require('./routes');
+// const { AppRoutes } = require('./routes');
 
 // initializing the app
 const app = express();
@@ -23,6 +25,12 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true },
+}));
 
 // Default server port
 app.get('/', (req, res) => {
@@ -30,18 +38,25 @@ app.get('/', (req, res) => {
 });
 
 // routes
-app.use('/', AppRoutes);
+// app.use('/', AppRoutes);
 
-// listen for incoming messages
-// after running the server, set ngrok callback url with this route
-app.post('/incoming-messages', (req, res) => {
+// entry point to current ussd app using ussd-builder states and menus
+app.post('/ussd', (req, res) => {
+  // eslint-disable-next-line no-unused-vars
   const data = req.body;
-  console.log('Received message', data);
-  console.log('Here is the body of the text:', data.text);
-  chatbotSMS();
-  // this response is required by Africa's Talking
-  res.sendStatus(200);
+  AppController(req, res);
 });
+
+// // listen for incoming messages
+// // after running the server, set ngrok callback url with this route
+// app.post('/incoming-messages', (req, res) => {
+//   const data = req.body;
+//   console.log('Received message', data);
+//   console.log('Here is the body of the text:', data.text);
+//   chatbotSMS();
+//   // this response is required by Africa's Talking
+//   res.sendStatus(200);
+// });
 
 // define the port
 const port = parseInt(process.env.PORT, 10) || 3000;

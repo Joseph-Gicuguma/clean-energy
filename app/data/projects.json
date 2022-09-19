@@ -1,0 +1,202 @@
+{
+  "Solar panels": {
+    "name": "Solar panels",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Heat pumps": {
+    "name": "Heat pumps",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  },
+  "Wind turbines": {
+    "name": "Wind turbines",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Hydrogen": {
+    "name": "Hydrogen",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  },
+  "Batteries": {
+    "name": "Batteries",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Electric cars": {
+    "name": "Electric cars",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  },
+  "Smart grids": {
+    "name": "Smart grids",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Smart homes": {
+    "name": "Smart homes",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  },
+  "Smart cities": {
+    "name": "Smart cities",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Smart buildings": {
+    "name": "Smart buildings",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  },
+  "Smart factories": {
+    "name": "Smart factories",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Smart agriculture": {
+    "name": "Smart agriculture",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  },
+  "Smart mobility": {
+    "name": "Smart mobility",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Smart health": {
+    "name": "Smart health",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  },
+  "Smart education": {
+    "name": "Smart education",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Smart security": {
+    "name": "Smart security",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  },
+  "Smart energy": {
+    "name": "Smart energy",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Smart water": {
+    "name": "Smart water",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  },
+  "Smart waste": {
+    "name": "Smart waste",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2022-10-01",
+    "endData": "2023-01-01",
+    "users": "12",
+    "is_open": true,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "123456789"
+  },
+  "Smart transport": {
+    "name": "Smart transport",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+    "startDate": "2032-10-01",
+    "endData": "2043-01-01",
+    "users": "23",
+    "is_open": false,
+    "imageUrl": "https://source.unsplash.com/user/c_v_r/1600x900",
+    "unique_id": "5444343"
+  }
+}

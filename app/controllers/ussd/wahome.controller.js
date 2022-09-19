@@ -2,38 +2,21 @@
 // eslint-disable-next-line no-unused-vars
 const { sms, ussd, menu } = require('../../config/africastalking');
 const Model = require('../../models/ticket.model');
-const WahomeController = require('./wahome.controller');
 
 const dataToSave = {};
 
-module.exports = async function AppController(req, res) {
+module.exports = async function newMenu22(req, res) {
   try {
-    menu.startState({
-      run: () => {
-        // use menu.con() to send response without terminating session
-        menu.con('Welcome! Ready to register for the Cool Devs Clean energy:'
-              + '\n1. Get started'
-              + '\n2. Wahome controller!');
-      },
-      // next object links to next state based on user input
-      next: {
-        1: 'register',
-        2: 'wahome-controller',
-      },
-    });
-
-    menu.state('register', {
-      run: () => {
-        menu.con('Do you have an account? If not, enter your name to register');
-      },
-      next: {
-        '*[a-zA-Z]+': 'entry-point-to-new-controller',
-      },
-    });
-
     menu.state('entry-point-to-new-controller', {
-      run() {
-        WahomeController(req, res);
+      run: () => {
+        const name = menu.val;
+        dataToSave.name = name;
+        console.log(dataToSave);
+        menu.con('(Entry to new controller file) How many tickets would you like to reserve?');
+      },
+      next: {
+        // using regex to match user input to next state
+        '*\\d+': 'end',
       },
     });
 
@@ -58,7 +41,7 @@ module.exports = async function AppController(req, res) {
         };
         await sms.send(options);
 
-        menu.end('Awesome! We have your tickets reserved. Sending a confirmation text shortly.');
+        menu.end(`Awesome! We have reserverd ${dataToSave.tickets} tickets for you mkubwa We have your tickets reserved. Sending a confirmation text shortly.`);
       },
     });
 
