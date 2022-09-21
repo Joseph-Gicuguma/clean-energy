@@ -5,14 +5,14 @@ const Model = require('../../models/ticket.model');
 
 const dataToSave = {};
 
-module.exports = async function newMenu22(req, res) {
+module.exports = async function subscriptionsController(req, res) {
   try {
-    menu.state('entry-point-to-new-controller', {
+    menu.state('entry-point-to-subscriptions-controller', {
       run: () => {
         const name = menu.val;
         dataToSave.name = name;
         console.log(dataToSave);
-        menu.con('(Entry to new controller file) How many tickets would you like to reserve?');
+        menu.con('This is the subscriptions controller');
       },
       next: {
         // using regex to match user input to next state

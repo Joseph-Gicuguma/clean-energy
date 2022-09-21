@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line no-unused-vars
 const { sms, ussd, menu } = require('../../config/africastalking');
-const Model = require('../../models/ticket.model');
-const WahomeController = require('./wahome.controller');
-
-const dataToSave = {};
+const RegisterController = require('./register.controller');
+const AboutController = require('./about.controller');
+const HelpController = require('./help.controller');
+const SubscriptionsController = require('./subscriptions.controller');
 
 module.exports = async function AppController(req, res) {
   try {
@@ -13,61 +13,42 @@ module.exports = async function AppController(req, res) {
         // use menu.con() to send response without terminating session
         menu.con('Welcome! Ready to register for the Cool Devs Clean energy:'
               + '\n1. Get started'
-              + '\n2. Wahome controller!');
+              + '\n2. Help!'
+              + '\n3. About'
+              + '\n4. Subscriptions');
       },
       // next object links to next state based on user input
       next: {
-        1: 'register',
-        2: 'wahome-controller',
+        1: 'entry-point-to-register-controller',
+        2: 'entry-point-to-help-controller',
+        3: 'entry-point-to-about-controller',
+        4: 'entry-point-to-subscriptions-controller',
       },
     });
 
-    menu.state('register', {
-      run: () => {
-        menu.con('Do you have an account? If not, enter your name to register');
-      },
-      next: {
-        '*[a-zA-Z]+': 'entry-point-to-new-controller',
-      },
-    });
-
-    menu.state('entry-point-to-new-controller', {
+    menu.state('entry-point-to-register-controller', {
       run() {
-        WahomeController(req, res);
+        RegisterController(req, res);
       },
     });
 
-    menu.state('end', {
-      run: async () => {
-        const tickets = menu.val;
-        dataToSave.tickets = tickets;
-        console.log(dataToSave);
-
-        // Save the data
-
-        const data = new Model({
-          name: dataToSave.name,
-          tickets: dataToSave.tickets,
-        });
-
-        const dataSaved = await data.save();
-        console.log(dataSaved);
-        const options = {
-          to: menu.args.phoneNumber,
-          message: `Hi ${dataToSave.name}, we've reserved ${dataToSave.tickets} tickets for you.`,
-        };
-        await sms.send(options);
-
-        menu.end('Awesome! We have your tickets reserved. Sending a confirmation text shortly.');
+    menu.state('entry-point-to-help-controller', {
+      run() {
+        HelpController(req, res);
       },
     });
 
-    menu.state('quit', {
-      run: () => {
-        menu.end('Goodbye :)');
+    menu.state('entry-point-to-about-controller', {
+      run() {
+        AboutController(req, res);
       },
     });
-    console.log('result');
+
+    menu.state('entry-point-to-subscriptions-controller', {
+      run() {
+        SubscriptionsController(req, res);
+      },
+    });
     menu.run(req.body, (ussdResult) => {
       res.send(ussdResult);
     });
