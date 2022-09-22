@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line no-unused-vars
 const { sms, ussd, menu } = require('../../config/africastalking');
-const RegisterController = require('./register.controller');
-const AboutController = require('./about.controller');
-const HelpController = require('./help.controller');
-const SubscriptionsController = require('./subscriptions.controller');
+const RegisterController = require('./auth/register.controller');
+const AboutController = require('./about/about.controller');
+const HelpController = require('./help/help.controller');
+const SubscriptionsController = require('./subscription/subscriptions.controller');
 
 module.exports = async function AppController(req, res) {
   try {

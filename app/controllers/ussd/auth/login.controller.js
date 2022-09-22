@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable no-console */
 // eslint-disable-next-line no-unused-vars
-const { sms, ussd, menu } = require('../../config/africastalking');
-const UserModel = require('../../models/user.model');
+const { sms, ussd, menu } = require('../../../config/africastalking');
+const UserModel = require('../../../models/user.model');
 
 const dataToSave = {};
 

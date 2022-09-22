@@ -1,22 +1,26 @@
 /* eslint-disable no-console */
 // eslint-disable-next-line no-unused-vars
-const { sms, ussd, menu } = require('../../config/africastalking');
-const Model = require('../../models/ticket.model');
+const { sms, ussd, menu } = require('../../../config/africastalking');
+const Model = require('../../../models/user.model');
 
 const dataToSave = {};
 
-module.exports = async function aboutController(req, res) {
+module.exports = async function helpController(req, res) {
   try {
-    menu.state('entry-point-to-about-controller', {
+    menu.state('entry-point-to-help-controller', {
       run: () => {
-        const name = menu.val;
-        dataToSave.name = name;
-        console.log(dataToSave);
-        menu.con('(This is the about controller');
+        menu.con('Get assistance or schedule a call back from us'
+              + '\n1. Schedule a call back'
+              + '\n2. Read our FAQs'
+              + '\n3. About'
+              + '\n4. Subscriptions');
       },
+      // next object links to next state based on user input
       next: {
-        // using regex to match user input to next state
-        '*\\d+': 'end',
+        1: 'entry-point-to-register-controller',
+        2: 'entry-point-to-help-controller',
+        3: 'entry-point-to-about-controller',
+        4: 'entry-point-to-subscriptions-controller',
       },
     });
 

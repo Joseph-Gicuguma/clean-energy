@@ -9,6 +9,26 @@ const UserSchema = new Schema({
     required: true,
     type: String,
   },
+  phoneNumber: {
+    required: false,
+    type: String,
+  },
+  isUser: {
+    required: false,
+    type: Boolean,
+  },
+  isProjectManager: {
+    required: false,
+    type: Boolean,
+  },
+  projectsSubscribedTo: {
+    required: false,
+    type: Array,
+  },
+  projectsCreated: {
+    required: false,
+    type: Array,
+  },
 });
 
 module.exports = model('User', UserSchema);

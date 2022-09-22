@@ -15,9 +15,6 @@ require('./config/database')(mongoose);
 // const chatbotSMS = require('./controllers/sms/chatbot.controller');
 const AppController = require('./controllers/ussd/app.controller');
 
-// importing routes form .routes
-// const { AppRoutes } = require('./routes');
-
 // initializing the app
 const app = express();
 
