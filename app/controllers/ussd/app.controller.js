@@ -49,6 +49,7 @@ module.exports = async function AppController(req, res) {
         SubscriptionsController(req, res);
       },
     });
+
     menu.run(req.body, (ussdResult) => {
       res.send(ussdResult);
     });
