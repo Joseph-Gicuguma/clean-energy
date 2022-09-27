@@ -7,12 +7,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const session = require('express-session');
+// const { sms } = require('./config/africastalking');
 
 // database configurations
 require('./config/database')(mongoose);
 
 // send sms server
-// const chatbotSMS = require('./controllers/sms/chatbot.controller');
+const chatbotSMS = require('./controllers/sms/chatbot.controller');
 const AppController = require('./controllers/ussd/app.controller');
 
 // initializing the app
@@ -44,16 +45,16 @@ app.post('/ussd', (req, res) => {
   AppController(req, res);
 });
 
-// // listen for incoming messages
-// // after running the server, set ngrok callback url with this route
-// app.post('/incoming-messages', (req, res) => {
-//   const data = req.body;
-//   console.log('Received message', data);
-//   console.log('Here is the body of the text:', data.text);
-//   chatbotSMS();
-//   // this response is required by Africa's Talking
-//   res.sendStatus(200);
-// });
+// listen for incoming messages
+// after running the server, set ngrok callback url with this route
+app.post('/incoming-messages', (req, res) => {
+  const data = req.body;
+  console.log('Received message', data);
+  console.log('Here is the body of the text:', data.text);
+  chatbotSMS(req, res);
+  // this response is required by Africa's Talking
+  res.sendStatus(200);
+});
 
 // define the port
 const port = parseInt(process.env.PORT, 10) || 3000;
