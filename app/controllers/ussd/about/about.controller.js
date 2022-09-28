@@ -2,7 +2,7 @@
 const UssdMenu = require('ussd-builder');
 // eslint-disable-next-line no-unused-vars
 const { sms, ussd, menu } = require('../../../config/africastalking');
-const ServicesController = require('../services/services.controller');
+const ServicesController = require('../projects/projects.controller');
 
 module.exports = async function aboutController(req, res) {
   try {

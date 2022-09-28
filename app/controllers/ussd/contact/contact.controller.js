@@ -7,9 +7,9 @@ const dataToSave = {};
 
 module.exports = async function helpController(req, res) {
   try {
-    menu.state('entry-point-to-help-controller', {
+    menu.state('entry-point-to-contact-controller', {
       run: () => {
-        menu.con('Get assistance or schedule a call back from us'
+        menu.con('This is the contact controller'
               + '\n1. Schedule a call back'
               + '\n2. Read our FAQs'
               + '\n3. About'
