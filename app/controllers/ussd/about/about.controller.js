@@ -1,16 +1,12 @@
 /* eslint-disable no-console */
-const UssdMenu = require('ussd-builder');
 // eslint-disable-next-line no-unused-vars
 const { sms, ussd, menu } = require('../../../config/africastalking');
-const ServicesController = require('../services/services.controller');
+const ServicesController = require('../projects/projects.controller');
 
 module.exports = async function aboutController(req, res) {
   try {
     menu.state('entry-point-to-about-controller', {
       run: () => {
-        const wahome = UssdMenu.UssdSessionConfig.get('firstName');
-        console.log('wahoem from state', wahome);
-
         menu.con(
           'Here you can get more information about the following services we offer'
             + '\n1. See all projects',

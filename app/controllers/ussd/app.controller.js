@@ -1,38 +1,41 @@
 /* eslint-disable no-console */
-// const UssdMenu = require('ussd-builder');
 const {
   // eslint-disable-next-line no-unused-vars
-  sms, ussd, menu, DefaultSessions,
+  sms,
+  // eslint-disable-next-line no-unused-vars
+  ussd,
+  menu,
 } = require('../../config/africastalking');
 const RegisterController = require('./auth/register.controller');
-const AboutController = require('./about/about.controller');
-const HelpController = require('./help/help.controller');
+const ContactController = require('./contact/contact.controller');
 const SubscriptionsController = require('./subscription/subscriptions.controller');
 const ManualController = require('./manual/manual.controller');
+const ProjectsController = require('./projects/projects.controller');
 
 module.exports = async function AppController(req, res) {
   try {
     menu.startState({
       run: () => {
         console.log('Starting app');
-        // DefaultSessions.set('firstName', 'wahome innocent');
         const { sessionId } = menu.args;
         console.log('session id', sessionId);
         // use menu.con() to send response without terminating session
-        menu.con('Welcome! Ready to register for the Cool Devs Clean energy:'
-              + '\n1. Get started'
-              + '\n2. Projects in your area'
-              + '\n3. Contact'
-              + '\n4. Manual/Guide'
-              + '\n5. Subscriptions');
+        menu.con(
+          'Welcome to Maximoff energy solutions:'
+            + '\n1. Get started'
+            + '\n2. Projects in your area'
+            + '\n3. My Subscriptions'
+            + '\n4. Contact us'
+            + '\n5. Maximoff Manual',
+        );
       },
       // next object links to next state based on user input
       next: {
         1: 'entry-point-to-register-controller',
         2: 'entry-point-to-projects-controller',
-        3: 'entry-point-to-contact-controller',
-        4: 'entry-point-to-manual-controller',
-        5: 'entry-point-to-subscriptions-controller',
+        3: 'entry-point-to-subscriptions-controller',
+        4: 'entry-point-to-contact-controller',
+        5: 'entry-point-to-manual-controller',
       },
     });
 
@@ -41,22 +44,21 @@ module.exports = async function AppController(req, res) {
         RegisterController(req, res);
       },
     });
-
-    menu.state('entry-point-to-help-controller', {
+    menu.state('entry-point-to-projects-controller', {
       run() {
-        HelpController(req, res);
-      },
-    });
-
-    menu.state('entry-point-to-about-controller', {
-      run() {
-        AboutController(req, res);
+        ProjectsController(req, res);
       },
     });
 
     menu.state('entry-point-to-subscriptions-controller', {
       run() {
         SubscriptionsController(req, res);
+      },
+    });
+
+    menu.state('entry-point-to-contact-controller', {
+      run() {
+        ContactController(req, res);
       },
     });
 

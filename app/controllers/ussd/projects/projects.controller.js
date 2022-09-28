@@ -64,7 +64,7 @@ for (let i = 0; i < projectsList.length; i += 1) {
 
 module.exports = async function subscriptionsController(req, res) {
   try {
-    menu.state('entry-point-to-services-controller', {
+    menu.state('entry-point-to-projects-controller', {
       // get all projects and display them in the menu
       run: () => {
         for (let i = 0; i < projectsList.length; i += 1) {
