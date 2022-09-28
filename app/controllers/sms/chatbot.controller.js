@@ -5,9 +5,7 @@ const { sms } = require('../../config/africastalking');
 module.exports = async function sendSMS(req, res) {
   // create a new express session
   try {
-    console.log('this is the reqbody', req.body);
     const { text } = req.body;
-    console.log('ffffffffffffffffffffomnal text', text);
     if (text === 'wahome') {
       const result = await sms.send({
         to: '+254771251753',
