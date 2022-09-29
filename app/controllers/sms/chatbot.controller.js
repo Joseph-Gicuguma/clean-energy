@@ -25,4 +25,5 @@ module.exports = async function sendSMS(req, res) {
   } catch (error) {
     console.error(error);
   }
+  
 };
