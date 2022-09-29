@@ -40,7 +40,7 @@ module.exports = async function ManualController(req, res) {
 
     menu.state('how-it-works', {
       run: () => {
-        menu.con('Here at ........ we have a simple process for delivering projects to our clients'
+        menu.con(' We do this by giving innovators a chance to showcase their solutions in either Affordable Housing or Manufacturing or more.  '
               + '\n1. Back'
               + '\n2. Learn more'
               + '\n3. End'
@@ -57,7 +57,7 @@ module.exports = async function ManualController(req, res) {
 
     menu.state('our-mission', {
       run: () => {
-        menu.con('Here you can get more information about the following services we offer'
+        menu.con('Our mission at Maximoff is to provide a data intermediary solutions to improve the quality of clean energy implementation.'
               + '\n1. Our project delivery system'
               + '\n2. How it works'
               + '\n3. Our mission'
@@ -75,7 +75,7 @@ module.exports = async function ManualController(req, res) {
 
     menu.state('our-vision', {
       run: () => {
-        menu.con('Here you can get more information about the following services we offer'
+        menu.con('Our Vission at maximoff is to empower upcoming energy solutions. '
               + '\n1. Our project delivery system'
               + '\n2. How it works'
               + '\n3. Our mission'
@@ -93,7 +93,7 @@ module.exports = async function ManualController(req, res) {
 
     menu.state('partner-with-us', {
       run: () => {
-        menu.con('Here you can get more information about the following services we offer'
+        menu.con('Here you can get more information about the following services we offer. '
               + '\n1. Our project delivery system'
               + '\n2. How it works'
               + '\n3. Our mission'
